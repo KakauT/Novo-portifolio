@@ -9,3 +9,6 @@ Um footer sobre o Desenvolvedor;
 Uma tela de Cadastro e Login comunicando com o banco em PHP;
 Um arquivo txt com os comandos SQL.
 OBS: Vocês estão livres para criar da melhor forma possível, a lista acima será o mínimo para atender a UC e finalizar com SUCESSO.
+
+
+Tela de login *(Falta arrumar as letras do input quando se preenche o campo!)*
