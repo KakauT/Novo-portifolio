@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="container-login">
+        <div class="wrap-login">
+            <form class="login-form">
+                <span class="login-form-title">
+						Faça o login
+					</span>
+
+                <div class="wrap-input margin-top-35 margin-bottom-35">
+                    <input class="input-form" type="text" name="email" autocomplete="off">
+                    <span class="focus-input-form" data-placeholder="E-mail"></span>
+                </div>
+
+                <div class="wrap-input margin-bottom-35">
+                    <input class="input-form" type="password" name="password">
+                    <span class="focus-input-form" data-placeholder="Senha"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
