@@ -164,9 +164,15 @@ section .cor:nth-child(3) {
 .formulario .wrap-input {
     width: 100%;
     position: relative;
-    border-bottom: 2px solid var(--line-input);
     outline: none;
 }
+
+
+/* 
+TESTAR DPS QUAL FICA MELHOR
+.formulario .inputBox {
+    color: #fff;
+} */
 
 .formulario .inputBox {
     width: 100%;
@@ -188,7 +194,7 @@ section .cor:nth-child(3) {
     width: 100%;
     height: 100%;
     top: 10px;
-    left: 5px;
+    left: 0;
     pointer-events: none;
     color: #fff;
 }
@@ -201,7 +207,6 @@ section .cor:nth-child(3) {
     left: 0;
     width: 0;
     height: 2px;
-    z-index: 2;
     transition: all 0.4s;
     background: #192231;
 }
@@ -263,3 +268,117 @@ section .cor:nth-child(3) {
     color: #fff;
     font-weight: 600;
 }
+
+.container_cad {
+    position: relative;
+    width: 650px;
+    min-height: 650px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formulario_cad {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.formulario_cad h1 {
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.formulario_cad h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: #fff;
+}
+
+.formulario_cad .inputBox {
+    margin-bottom: 30px;
+}
+
+.formulario_cad .inputBox input::placeholder {
+    color: #fff;
+}
+
+.formulario_cad .inputBox input {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    line-height: 1.1;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    outline: none;
+}
+
+.formulario_cad .inputBtn input[type="submit"] {
+    width: 100%;
+    outline: none;
+    background: #fff;
+    color: #192231;
+    padding: 10px 20px;
+    max-width: 150px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+
+/* .formulario_cad .focus-input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    color: #192231;
+}
+
+.formulario_cad .focus-input::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.4s;
+    background: #192231;
+}
+
+.formulario_cad .inputBox:focus+.focus-input::before {
+    width: 100%;
+}
+
+.formulario_cad .has-val.inputBox+.focus-input::before {
+    width: 100%;
+} */
