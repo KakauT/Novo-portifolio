@@ -62,12 +62,12 @@
 
         if(!empty($email) && !empty($senha))
         {
-            $usuario->conectar("tela_login56","localhost","root","");
+            $usuario->conectar("portifolio_login","localhost","root","");
             if($usuario->msgErro =="")
             {
                 if($usuario->logar($email, $senha))
                 {
-                    header("location: area_privada.php");
+                    header("home.php");
                 }
                 else
                 {
