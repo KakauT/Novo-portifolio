@@ -54,5 +54,49 @@
 
     </section>
 </body>
+<?php
+    if(isset($_POST['email']))
+    {
+        $email = addslashes($_POST['email']);
+        $senha = addslashes($_POST['senha']);
+
+        if(!empty($email) && !empty($senha))
+        {
+            $usuario->conectar("tela_login56","localhost","root","");
+            if($usuario->msgErro =="")
+            {
+                if($usuario->logar($email, $senha))
+                {
+                    header("location: area_privada.php");
+                }
+                else
+                {
+                    ?>
+                    <div id="msg-erro">
+                        Email e/ou senha não confere.
+                    </div>
+                    <?php
+                }
+            }
+            else
+            {
+                ?>
+                <div id="msg-erro">
+                    <?php echo "Erro: " .$usuario->msgErro; ?>
+                </div>
+                <?php
+            }
+        }
+        else
+        {
+            ?>
+                <div id="msg-erro">
+                    Preencha todos os campos!
+                </div>
+            <?php
+        }
+    }
+
+    ?>
 
 </html>
