@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login_Portifólio_Kakau</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_login.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="formulario">
                     <h1>.:LOGIN PORTIFÓLIO:.</h1>
-                    <form>
+                    <form method="POST">
                         <div class="wrap-input margin-top-35 margin-bottom-35">
                             <input class="inputBox" type="text" name="email" autocomplete="off">
                             <span class="focus-input" data-placeholder="E-mail"></span>
@@ -67,7 +67,7 @@
             {
                 if($usuario->logar($email, $senha))
                 {
-                    header("home.php");
+                    header("location: home.php");
                 }
                 else
                 {

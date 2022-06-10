@@ -19,7 +19,7 @@ class Usuario
     {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e");
+        $sql = $pdo->prepare("SELECT usuario_id FROM usuarios WHERE email = :e");
         $sql->bindValue(":e",$email);
         $sql->execute();
         if($sql->rowCount()>0)
@@ -44,7 +44,7 @@ class Usuario
         global $pdo;
 
         //verificar se o email e a senha estão cadastrados, se sim
-        $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :s");
+        $sql = $pdo->prepare("SELECT usuario_id FROM usuarios WHERE email = :e AND senha = :s");
         $sql->bindValue(":e", $email);
         $sql->bindValue(":s",md5($senha));
         $sql->execute();
@@ -53,7 +53,7 @@ class Usuario
             //entrar no sistema
             $dado = $sql->fetch();
             session_start();
-            $_SESSION['id_usuario'] = $dado['id_usuario'];
+            $_SESSION['usuario_id'] = $dado['usuario_id'];
             return true;//usuário cadastrado
         }
         else{

@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css?family=Bellota');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bellota';
+    font-size: 17px;
+}
+
+body {
+    overflow: hidden;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #192231, #697894);
+}
+
+section .cor {
+    position: absolute;
+    filter: blur(140px);
+}
+
+section .cor:nth-child(1) {
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background-color: #5362b8;
+}
+
+section .cor:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: #c5637d;
+}
+
+section .cor:nth-child(3) {
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background-color: #976b57;
+}
+
+.box {
+    position: relative;
+}
+
+.box .quadrado {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        transform: translateY(-40px);
+    }
+    50% {
+        transform: translateY(40px);
+    }
+}
+
+.box .quadrado:nth-child(1) {
+    top: -50px;
+    right: -60px;
+    width: 100px;
+    height: 100px;
+}
+
+.box .quadrado:nth-child(2) {
+    top: 150px;
+    left: -100px;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+}
+
+.box .quadrado:nth-child(3) {
+    bottom: 50px;
+    right: -60px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+.box .quadrado:nth-child(4) {
+    bottom: -80px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.box .quadrado:nth-child(5) {
+    top: -80px;
+    left: 140px;
+    width: 60px;
+    height: 60px;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formulario {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.formulario .margin-bottom-35 {
+    margin-bottom: 34px;
+}
+
+.formulario .margin-top-35 {
+    margin-top: 34px;
+}
+
+.formulario h1 {
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.formulario h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: #fff;
+}
+
+.formulario .wrap-input {
+    width: 100%;
+    position: relative;
+    outline: none;
+}
+
+
+/* 
+TESTAR DPS QUAL FICA MELHOR
+.formulario .inputBox {
+    color: #fff;
+} */
+
+.formulario .inputBox {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 52px;
+    background: transparent;
+    padding: 0 5px;
+    outline: none;
+}
+
+.formulario .focus-input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    color: #fff;
+}
+
+.formulario .focus-input::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.4s;
+    background: #192231;
+}
+
+.formulario .focus-input::after {
+    line-height: 1.2;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    padding-left: 5px;
+    transition: all 0.4s;
+}
+
+.formulario .inputBox:focus+.focus-input::after {
+    top: -20px;
+    font-size: 15px;
+}
+
+.formulario .inputBox:focus+.focus-input::before {
+    width: 100%;
+}
+
+.formulario .has-val.inputBox+.focus-input::after {
+    top: -20px;
+    font-size: 15px;
+}
+
+.formulario .has-val.inputBox+.focus-input::before {
+    width: 100%;
+}
+
+.formulario .inputBtn input[type="submit"] {
+    width: 100%;
+    outline: none;
+    background: #fff;
+    color: #192231;
+    padding: 10px 20px;
+    max-width: 100px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.esqueci {
+    margin-top: 5px;
+    color: #fff;
+}
+
+.esqueci a {
+    color: #fff;
+    font-weight: 600;
+}
+
+.container_cad {
+    position: relative;
+    width: 650px;
+    min-height: 650px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formulario_cad {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.formulario_cad h1 {
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.formulario_cad h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: #fff;
+}
+
+.formulario_cad .inputBox {
+    margin-bottom: 30px;
+}
+
+.formulario_cad .inputBox input::placeholder {
+    color: #fff;
+}
+
+.formulario_cad .inputBox input {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    line-height: 1.1;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    outline: none;
+}
+
+.formulario_cad .inputBtn input[type="submit"] {
+    width: 100%;
+    outline: none;
+    background: #fff;
+    color: #192231;
+    padding: 10px 20px;
+    max-width: 150px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+
+/* .formulario_cad .focus-input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    color: #192231;
+}
+
+.formulario_cad .focus-input::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.4s;
+    background: #192231;
+}
+
+.formulario_cad .inputBox:focus+.focus-input::before {
+    width: 100%;
+}
+
+.formulario_cad .has-val.inputBox+.focus-input::before {
+    width: 100%;
+} */
